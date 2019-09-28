@@ -13,6 +13,9 @@
 		092E93A4233F86A0001F84B3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 092E93A2233F86A0001F84B3 /* Main.storyboard */; };
 		092E93A6233F86A4001F84B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 092E93A5233F86A4001F84B3 /* Assets.xcassets */; };
 		092E93A9233F86A4001F84B3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 092E93A7233F86A4001F84B3 /* LaunchScreen.storyboard */; };
+		092E93B1233F9B0C001F84B3 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092E93B0233F9B0C001F84B3 /* ViewModel.swift */; };
+		092E93B3233FB1B1001F84B3 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092E93B2233FB1B1001F84B3 /* Model.swift */; };
+		092E93B5233FB1F3001F84B3 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092E93B4233FB1F3001F84B3 /* APIClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		092E93A5233F86A4001F84B3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		092E93A8233F86A4001F84B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		092E93AA233F86A4001F84B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		092E93B0233F9B0C001F84B3 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		092E93B2233FB1B1001F84B3 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		092E93B4233FB1F3001F84B3 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +65,9 @@
 				092E939C233F86A0001F84B3 /* AppDelegate.swift */,
 				092E939E233F86A0001F84B3 /* SceneDelegate.swift */,
 				092E93A0233F86A0001F84B3 /* ViewController.swift */,
+				092E93B0233F9B0C001F84B3 /* ViewModel.swift */,
+				092E93B2233FB1B1001F84B3 /* Model.swift */,
+				092E93B4233FB1F3001F84B3 /* APIClient.swift */,
 				092E93A2233F86A0001F84B3 /* Main.storyboard */,
 				092E93A5233F86A4001F84B3 /* Assets.xcassets */,
 				092E93A7233F86A4001F84B3 /* LaunchScreen.storyboard */,
@@ -138,9 +147,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				092E93B3233FB1B1001F84B3 /* Model.swift in Sources */,
 				092E93A1233F86A0001F84B3 /* ViewController.swift in Sources */,
 				092E939D233F86A0001F84B3 /* AppDelegate.swift in Sources */,
+				092E93B1233F9B0C001F84B3 /* ViewModel.swift in Sources */,
 				092E939F233F86A0001F84B3 /* SceneDelegate.swift in Sources */,
+				092E93B5233FB1F3001F84B3 /* APIClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
