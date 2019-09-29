@@ -18,7 +18,7 @@ class ViewModel {
     func getItem() {
         model.getItem({ [weak self] title, createdAt, url in
             guard let self = self else { return }
-            let text = "タイトル: \(title)\n\n投稿日時: \(createdAt)\n\nURL: \(url)"
+            let text = "【新着記事】\n\nタイトル: \(title)\n\n投稿日時: \(createdAt)\n\nURL: \(url)"
             self.textRelay.accept(text)
             
             }, failure: {

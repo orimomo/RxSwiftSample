@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yyR-dT-QOh">
-                                <rect key="frame" x="119.5" y="688" width="175" height="60"/>
+                                <rect key="frame" x="119.5" y="663" width="175" height="60"/>
                                 <color key="backgroundColor" red="0.33220520619999999" green="0.77896863220000001" blue="0.0030338549989999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="175" id="NRB-pd-7he"/>
@@ -27,10 +27,10 @@
                                 </state>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xLA-LU-VYV">
-                                <rect key="frame" x="20" y="378" width="374" height="150"/>
+                                <rect key="frame" x="20" y="353" width="374" height="200"/>
                                 <color key="backgroundColor" red="0.8217575917254043" green="1" blue="0.75235636791206106" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="fOi-mY-c8g"/>
+                                    <constraint firstAttribute="height" constant="200" id="fOi-mY-c8g"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
@@ -43,7 +43,7 @@
                             <constraint firstItem="xLA-LU-VYV" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="PYL-i7-jBT"/>
                             <constraint firstItem="xLA-LU-VYV" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="kGv-Ax-zRS"/>
                             <constraint firstItem="yyR-dT-QOh" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="mvd-aL-Z7N"/>
-                            <constraint firstItem="yyR-dT-QOh" firstAttribute="top" secondItem="xLA-LU-VYV" secondAttribute="bottom" constant="160" id="oyC-d7-4RQ"/>
+                            <constraint firstItem="yyR-dT-QOh" firstAttribute="top" secondItem="xLA-LU-VYV" secondAttribute="bottom" constant="110" id="oyC-d7-4RQ"/>
                             <constraint firstItem="xLA-LU-VYV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="sao-mc-pYc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>

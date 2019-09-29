@@ -13,6 +13,7 @@ class Model {
     
     func getItem(_ success: ((_ title: String, _ createdAt: String, _ url: String) -> Void)?, failure: (() -> Void)?) {
         let URL = "https://qiita.com/api/v2/items"
+        let userName = "orimomo"
         
         Alamofire.request(
             URL,
@@ -20,7 +21,7 @@ class Model {
             parameters: [
                 "page": 1,
                 "per_page": 1,
-                "query": "qiita user:orimomo"
+                "query": "qiita user:\(userName)"
             ])
             .responseJSON { (response) in
 
