@@ -12,6 +12,7 @@ import RxCocoa
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var label: UILabel!
     @IBOutlet weak var button: UIButton!
     
     private let viewModel = ViewModel()
@@ -21,12 +22,20 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+        viewModel.textRelay
+            .asObservable()
+            .subscribe(onNext: { [weak self] text in
+                guard let self = self else { return }
+                self.label.text = text
+            })
+            .disposed(by: disposeBag)
+        
         button.rx.tap
             .subscribe { [weak self] _ in
                 guard let self = self else { return }
                 self.viewModel.getItem()
-            }
-            .disposed(by: disposeBag)
+        }
+        .disposed(by: disposeBag)
     }
 }
 

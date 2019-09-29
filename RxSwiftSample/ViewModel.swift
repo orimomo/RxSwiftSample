@@ -7,35 +7,22 @@
 //
 
 import Foundation
-import Alamofire
+import RxSwift
+import RxCocoa
 
 class ViewModel {
+    
+    private let model = Model()
+    var textRelay: BehaviorRelay<String> = BehaviorRelay(value: "？")
+    
     func getItem() {
-        let URL = "https://qiita.com/api/v2/items"
-        
-        Alamofire.request(
-            URL,
-            method: .get,
-            parameters: [
-                "page": 1,
-                "per_page": 1,
-                "query": "qiita user:orimomo"
-            ])
-            .responseJSON { (response) in
-
-                switch response.result {
-                case .success(_):
-                    if let items = response.result.value as? [Any] {
-                        for item in items {
-                            if let JSON = item as? [String: Any] {
-                                let title = JSON["title"] as! String
-                                print(title)
-                            }
-                        }
-                    }
-                case .failure(_): break
-
-                }
-        }
+        model.getItem({ [weak self] title, createdAt, url in
+            guard let self = self else { return }
+            let text = "タイトル: \(title)\n\n投稿日時: \(createdAt)\n\nURL: \(url)"
+            self.textRelay.accept(text)
+            
+            }, failure: {
+                // error handling
+        })
     }
 }

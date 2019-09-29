@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yyR-dT-QOh">
-                                <rect key="frame" x="119.5" y="641.5" width="175" height="60"/>
+                                <rect key="frame" x="119.5" y="688" width="175" height="60"/>
                                 <color key="backgroundColor" red="0.33220520619999999" green="0.77896863220000001" blue="0.0030338549989999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="175" id="NRB-pd-7he"/>
@@ -26,12 +26,13 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xLA-LU-VYV">
-                                <rect key="frame" x="20" y="424.5" width="374" height="57"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xLA-LU-VYV">
+                                <rect key="frame" x="20" y="378" width="374" height="150"/>
+                                <color key="backgroundColor" red="0.8217575917254043" green="1" blue="0.75235636791206106" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="57" id="fOi-mY-c8g"/>
+                                    <constraint firstAttribute="height" constant="150" id="fOi-mY-c8g"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="47"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -49,6 +50,7 @@
                     </view>
                     <connections>
                         <outlet property="button" destination="yyR-dT-QOh" id="MfU-62-Xxa"/>
+                        <outlet property="label" destination="xLA-LU-VYV" id="4Cl-rb-7ZR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
