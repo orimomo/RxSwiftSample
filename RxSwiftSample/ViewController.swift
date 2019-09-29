@@ -13,7 +13,8 @@ import RxCocoa
 class ViewController: UIViewController {
     
     @IBOutlet weak var label: UILabel!
-    @IBOutlet weak var button: UIButton!
+    @IBOutlet weak var getButton: UIButton!
+    @IBOutlet weak var clearButton: UIButton!
     
     private let viewModel = ViewModel()
     private let disposeBag = DisposeBag()
@@ -30,10 +31,17 @@ class ViewController: UIViewController {
             })
             .disposed(by: disposeBag)
         
-        button.rx.tap
+        getButton.rx.tap
             .subscribe { [weak self] _ in
                 guard let self = self else { return }
                 self.viewModel.getItem()
+        }
+        .disposed(by: disposeBag)
+        
+        clearButton.rx.tap
+            .subscribe { [weak self] _ in
+                guard let self = self else { return }
+                self.viewModel.clearText()
         }
         .disposed(by: disposeBag)
     }

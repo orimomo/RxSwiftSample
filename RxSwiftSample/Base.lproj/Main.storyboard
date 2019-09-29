@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yyR-dT-QOh">
-                                <rect key="frame" x="119.5" y="663" width="175" height="60"/>
+                                <rect key="frame" x="119.5" y="633" width="175" height="60"/>
                                 <color key="backgroundColor" red="0.33220520619999999" green="0.77896863220000001" blue="0.0030338549989999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="175" id="NRB-pd-7he"/>
@@ -36,20 +36,34 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="okC-Pl-Kzr">
+                                <rect key="frame" x="177" y="713" width="60" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="Fv1-ZL-yQ0"/>
+                                    <constraint firstAttribute="width" constant="60" id="mwI-g3-ez6"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Clear">
+                                    <color key="titleColor" red="0.33220520619999999" green="0.77896863220000001" blue="0.0030338549989999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xLA-LU-VYV" secondAttribute="trailing" constant="20" id="P46-z0-bYq"/>
                             <constraint firstItem="xLA-LU-VYV" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="PYL-i7-jBT"/>
+                            <constraint firstItem="okC-Pl-Kzr" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="UWM-sG-kPE"/>
                             <constraint firstItem="xLA-LU-VYV" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="kGv-Ax-zRS"/>
                             <constraint firstItem="yyR-dT-QOh" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="mvd-aL-Z7N"/>
-                            <constraint firstItem="yyR-dT-QOh" firstAttribute="top" secondItem="xLA-LU-VYV" secondAttribute="bottom" constant="110" id="oyC-d7-4RQ"/>
+                            <constraint firstItem="yyR-dT-QOh" firstAttribute="top" secondItem="xLA-LU-VYV" secondAttribute="bottom" constant="80" id="oyC-d7-4RQ"/>
+                            <constraint firstItem="okC-Pl-Kzr" firstAttribute="top" secondItem="yyR-dT-QOh" secondAttribute="bottom" constant="20" id="qgU-Gh-Ihi"/>
                             <constraint firstItem="xLA-LU-VYV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="sao-mc-pYc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="button" destination="yyR-dT-QOh" id="MfU-62-Xxa"/>
+                        <outlet property="clearButton" destination="okC-Pl-Kzr" id="4tT-Zf-OGi"/>
+                        <outlet property="getButton" destination="yyR-dT-QOh" id="2xI-Ia-Md0"/>
                         <outlet property="label" destination="xLA-LU-VYV" id="4Cl-rb-7ZR"/>
                     </connections>
                 </viewController>

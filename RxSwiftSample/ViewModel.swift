@@ -25,4 +25,8 @@ class ViewModel {
                 // error handling
         })
     }
+    
+    func clearText() {
+        textRelay.accept("？")
+    }
 }
