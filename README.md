@@ -1,7 +1,7 @@
 # RxSwiftSample
 
 ## 概要
-* RxSwiftをざっくり理解して使えるようにするために作ったサンプル
+* RxSwiftを使ったAPI通信処理をざっくり理解するために作ったサンプル
 * ボタンを押すと[QiitaAPI](https://qiita.com/api/v2/docs) から自分の最新記事情報を取得し、表示する
 * RxSwiftでのイベント処理と、APIから取得したデータのバインディング（Relay）を実装
 * アーキテクチャはMVVMを使用
