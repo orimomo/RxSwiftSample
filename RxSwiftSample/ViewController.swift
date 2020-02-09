@@ -22,23 +22,18 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        viewModel.textRelay
-            .asObservable()
-            .subscribe(onNext: { [weak self] text in
-                guard let self = self else { return }
-                self.label.text = text
-            }).disposed(by: disposeBag)
+        self.viewModel.getItem()
         
         getButton.rx.tap
             .subscribe { [weak self] _ in
-                guard let self = self else { return }
-                self.viewModel.getItem()
+                guard let weakSelf = self else { return }
+                weakSelf.label.text = weakSelf.viewModel.text.value
         }.disposed(by: disposeBag)
         
         clearButton.rx.tap
             .subscribe { [weak self] _ in
-                guard let self = self else { return }
-                self.viewModel.clearText()
+                guard let weakSelf = self else { return }
+                weakSelf.label.text = ""
         }.disposed(by: disposeBag)
     }
 }

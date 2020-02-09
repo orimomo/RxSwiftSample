@@ -13,20 +13,22 @@ import RxCocoa
 class ViewModel {
     
     private let model = Model()
-    var textRelay: BehaviorRelay<String> = BehaviorRelay(value: "？")
+//    var textRelay: BehaviorRelay<String> = BehaviorRelay(value: "？")
+    
+    let text = BehaviorRelay(value: "")
+    
+    private let disposeBag = DisposeBag()
     
     func getItem() {
-        model.getItem({ [weak self] item in
-            guard let self = self else { return }
-            let text = "【新着記事】\n\nタイトル: \(item.title)\n\n投稿日時: \(item.createdAt)\n\nURL: \(item.url)"
-            self.textRelay.accept(text)
-            
-            }, failure: {
-                // error handling
-        })
+        model.getItem()
+        .subscribe(onNext: {[weak self] item in
+            guard let weakSelf = self else { return }
+            let text = weakSelf.createText(item: item)
+            weakSelf.text.accept(text)
+        }).disposed(by: disposeBag)
     }
     
-    func clearText() {
-        textRelay.accept("？")
+    private func createText(item: Item) -> String {
+        return "【新着記事】\n\nタイトル: \(item.title)\n\n投稿日時: \(item.createdAt)\n\nURL: \(item.url)"
     }
 }

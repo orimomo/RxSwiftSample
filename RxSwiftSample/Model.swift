@@ -8,42 +8,50 @@
 
 import Foundation
 import Alamofire
+import RxSwift
+import RxCocoa
 
 class Model {
     
-    func getItem(_ success: ((_ item: Item) -> Void)?, failure: (() -> Void)?) {
-        let URL = "https://qiita.com/api/v2/items"
-        let userName = "orimomo"
-        
-        Alamofire.request(
-            URL,
-            method: .get,
-            parameters: [
-                "page": 1,
-                "per_page": 1,
-                "query": "qiita user:\(userName)"
-            ])
-            .responseJSON { (response) in
+    func getItem() -> Observable<Item> {
+        let observable = Observable<Item>.create { observer in
+            
+            let URL = "https://qiita.com/api/v2/items"
+            let userName = "orimomo"
+            
+            Alamofire.request(
+                URL,
+                method: .get,
+                parameters: [
+                    "page": 1,
+                    "per_page": 1,
+                    "query": "qiita user:\(userName)"
+                ])
+                .responseJSON { (response) in
 
-                switch response.result {
-                case .success(_):
-                    if let data = response.data {
-                        do {
-                            let decoder = JSONDecoder()
-                            decoder.keyDecodingStrategy = .convertFromSnakeCase
-                            // ルートが配列のJSONなので、配列としてデコードする
-                            let items: [Item] = try decoder.decode([Item].self, from: data)
-                            if let success = success {
+                    switch response.result {
+                    case .success(_):
+                        if let data = response.data {
+                            do {
+                                let decoder = JSONDecoder()
+                                decoder.keyDecodingStrategy = .convertFromSnakeCase
+                                // ルートが配列のJSONなので、配列としてデコードする
+                                let items: [Item] = try decoder.decode([Item].self, from: data)
                                 guard let item = items.first else { return }
-                                success(item)
+                                observer.onNext(item)
+                                observer.on(.next(item))
+                                observer.onCompleted()
+                            } catch {
+                                print(error.localizedDescription)
                             }
-                        } catch {
-                            print(error.localizedDescription)
                         }
+                    case .failure(let error):
+                        observer.onError(error)
                     }
-                case .failure(_): break
-                    // error handling
-                }
+                    
+            }
+             return Disposables.create(with: {})
         }
+        return observable.take(1)
     }
 }
