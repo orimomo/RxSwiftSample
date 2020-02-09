@@ -6,8 +6,6 @@
 //  Copyright © 2020 orimomo. All rights reserved.
 //
 
-import Foundation
-
 struct Item: Codable {
     var title: String
     var createdAt: String
