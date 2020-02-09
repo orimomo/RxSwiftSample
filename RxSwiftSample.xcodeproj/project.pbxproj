@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		090283FA23EFF389009F8FC0 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090283F923EFF389009F8FC0 /* Item.swift */; };
 		092E939D233F86A0001F84B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092E939C233F86A0001F84B3 /* AppDelegate.swift */; };
 		092E939F233F86A0001F84B3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092E939E233F86A0001F84B3 /* SceneDelegate.swift */; };
 		092E93A1233F86A0001F84B3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092E93A0233F86A0001F84B3 /* ViewController.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		090283F923EFF389009F8FC0 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		092E9399233F86A0001F84B3 /* RxSwiftSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxSwiftSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		092E939C233F86A0001F84B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		092E939E233F86A0001F84B3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 				092E93A0233F86A0001F84B3 /* ViewController.swift */,
 				092E93B0233F9B0C001F84B3 /* ViewModel.swift */,
 				092E93B2233FB1B1001F84B3 /* Model.swift */,
+				090283F923EFF389009F8FC0 /* Item.swift */,
 				092E93A2233F86A0001F84B3 /* Main.storyboard */,
 				092E93A5233F86A4001F84B3 /* Assets.xcassets */,
 				092E93A7233F86A4001F84B3 /* LaunchScreen.storyboard */,
@@ -127,7 +130,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1100;
 				LastUpgradeCheck = 1100;
-				ORGANIZATIONNAME = "Momoko Orita";
+				ORGANIZATIONNAME = orimomo;
 				TargetAttributes = {
 					092E9398233F86A0001F84B3 = {
 						CreatedOnToolsVersion = 11.0;
@@ -216,6 +219,7 @@
 				092E93A1233F86A0001F84B3 /* ViewController.swift in Sources */,
 				092E939D233F86A0001F84B3 /* AppDelegate.swift in Sources */,
 				092E93B1233F9B0C001F84B3 /* ViewModel.swift in Sources */,
+				090283FA23EFF389009F8FC0 /* Item.swift in Sources */,
 				092E939F233F86A0001F84B3 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

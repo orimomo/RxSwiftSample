@@ -27,17 +27,17 @@ class Model {
 
                 switch response.result {
                 case .success(_):
-                    if let items = response.result.value as? [Any] {
-                        for item in items {
-                            if let JSON = item as? [String: Any] {
-                                let title = JSON["title"] as! String
-                                let createdAt = JSON["created_at"] as! String
-                                let url = JSON["url"] as! String
-                                
-                                if let success = success {
-                                    success(title, createdAt, url)
-                                }
+                    if let data = response.data {
+                        do {
+                            let decoder = JSONDecoder()
+                            decoder.keyDecodingStrategy = .convertFromSnakeCase
+                            // ルートが配列のJSONなので、配列としてデコードする
+                            let items: [Item] = try decoder.decode([Item].self, from: data)
+                            if let success = success {
+                                success(items[0].title, items[0].createdAt, items[0].url)
                             }
+                        } catch {
+                            print(error.localizedDescription)
                         }
                     }
                 case .failure(_): break
