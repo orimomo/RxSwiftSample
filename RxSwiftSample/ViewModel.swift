@@ -11,12 +11,9 @@ import RxSwift
 import RxCocoa
 
 class ViewModel {
-    
-    private let model = Model()
-//    var textRelay: BehaviorRelay<String> = BehaviorRelay(value: "？")
-    
     let text = BehaviorRelay(value: "")
     
+    private let model = Model()
     private let disposeBag = DisposeBag()
     
     func getItem() {
