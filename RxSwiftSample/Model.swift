@@ -11,7 +11,7 @@ import Alamofire
 
 class Model {
     
-    func getItem(_ success: ((_ title: String, _ createdAt: String, _ url: String) -> Void)?, failure: (() -> Void)?) {
+    func getItem(_ success: ((_ item: Item) -> Void)?, failure: (() -> Void)?) {
         let URL = "https://qiita.com/api/v2/items"
         let userName = "orimomo"
         
@@ -34,7 +34,8 @@ class Model {
                             // ルートが配列のJSONなので、配列としてデコードする
                             let items: [Item] = try decoder.decode([Item].self, from: data)
                             if let success = success {
-                                success(items[0].title, items[0].createdAt, items[0].url)
+                                guard let item = items.first else { return }
+                                success(item)
                             }
                         } catch {
                             print(error.localizedDescription)

@@ -16,9 +16,9 @@ class ViewModel {
     var textRelay: BehaviorRelay<String> = BehaviorRelay(value: "？")
     
     func getItem() {
-        model.getItem({ [weak self] title, createdAt, url in
+        model.getItem({ [weak self] item in
             guard let self = self else { return }
-            let text = "【新着記事】\n\nタイトル: \(title)\n\n投稿日時: \(createdAt)\n\nURL: \(url)"
+            let text = "【新着記事】\n\nタイトル: \(item.title)\n\n投稿日時: \(item.createdAt)\n\nURL: \(item.url)"
             self.textRelay.accept(text)
             
             }, failure: {
