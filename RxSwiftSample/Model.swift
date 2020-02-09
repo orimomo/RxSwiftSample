@@ -13,19 +13,20 @@ import RxCocoa
 
 class Model {
     
+    enum ConnectInfo {
+        static let URL = "https://qiita.com/api/v2/items"
+        static let UserName = "orimomo"
+    }
+    
     func getItem() -> Observable<Item> {
         let observable = Observable<Item>.create { observer in
-            
-            let URL = "https://qiita.com/api/v2/items"
-            let userName = "orimomo"
-            
             Alamofire.request(
-                URL,
+                ConnectInfo.URL,
                 method: .get,
                 parameters: [
                     "page": 1,
                     "per_page": 1,
-                    "query": "qiita user:\(userName)"
+                    "query": "qiita user:\(ConnectInfo.UserName)"
                 ])
                 .responseJSON { (response) in
 
