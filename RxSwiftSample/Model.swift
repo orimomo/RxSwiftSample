@@ -40,7 +40,6 @@ class Model {
                                 let items: [Item] = try decoder.decode([Item].self, from: data)
                                 guard let item = items.first else { return }
                                 observer.onNext(item)
-                                observer.on(.next(item))
                                 observer.onCompleted()
                             } catch {
                                 print(error.localizedDescription)
